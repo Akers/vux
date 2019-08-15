@@ -2,8 +2,9 @@ const WEBP_NAME = 'can_use_webp'
 
 export function detectWebp () {
   if (typeof window === 'undefined') return
-  try{if (!window.localStorage || typeof localStorage !== 'object') return}
-  catch(e) {return}
+  // try{if (!window.localStorage || typeof localStorage !== 'object') return}
+  // catch(e) {return}
+  if (!window.localStorage || typeof localStorage !== 'object') return
   if (!localStorage.getItem(WEBP_NAME) || (localStorage.getItem(WEBP_NAME) !==
       'available' && localStorage.getItem(WEBP_NAME) !== 'disable')) {
     var img = document.createElement('img')
